@@ -1,33 +1,24 @@
-// Listing 4.1
+// Set the port number the server will listen on
+const port = 3000,
 
-// Import required modules
-const port = 3000, // Set the port number the server will listen on
-  http = require("http"), // Import the built-in HTTP module
-  httpStatus = require("http-status-codes"); // Import HTTP status codes
+    http = require("http"),
+    httpStatus = require("http-status-codes"),
 
-// Create the HTTP server
-app = http.createServer((request, response) => {
-  console.log("Received an incoming request!"); // Log when a request is received
+    // Create an HTTP server
+    app = http.createServer((request, response) => {
+        console.log("Received an incoming request!");
+        response.writeHead(httpStatus.StatusCodes.OK, {
+            "Content-Type": "text/html"
+        });
 
-  // Set the response header with status code and content type
-  response.writeHead(httpStatus.OK, {
-    "Content-Type": "text/html"
-  });
+        // Define the HTML response message
+        let responseMessage = "<h1>Hello, Universe!</h1>";
+        response.write(responseMessage);
+        console.log(`Sent a response : ${responseMessage}`);
+    });
 
-  // Define the response message
-  let responseMessage = "<h1>Hello, Universe!</h1>";
-
-  // Send the response message to the client
-  response.write(responseMessage);
-  response.end(); // End the response
-
-  // Log the response sent
-  console.log(`Sent a response : ${responseMessage}`);
-});
-
-// Start the server and listen on the specified port
+// Start the server and listen on the defined port
 app.listen(port);
 
-// Log that the server has started
-console.log(`The server has started and is listening on port number:
-${port}`);
+// Log a message indicating that the server is running
+console.log(`The server has started and is listening on port number: ${port}`);
