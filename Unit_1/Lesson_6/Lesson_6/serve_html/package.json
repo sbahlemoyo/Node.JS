@@ -1,12 +1,12 @@
 {
-  "name": "server_html",
+  "name": "serve_html",
   "version": "1.0.0",
-  "description": "A server that serves multiple web pages",
+  "description": " BETTER ROUTES AND SERVING EXTERNAL FILES",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Sbahle",
+  "author": "Lesedi",
   "license": "ISC",
   "dependencies": {
     "http-status-codes": "^2.3.0"
